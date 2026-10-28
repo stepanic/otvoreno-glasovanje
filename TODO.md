@@ -39,8 +39,13 @@ ZK krug nad Certilia tokenom uopće izvediv u pregledniku.
       `IBallotModule`, `IGatekeeper`, `configHash` (P0.4, P2.1)
 - [x] 1.7 ~~Ako token nosi fotografiju~~ ne nosi (mobile.ID); provjeriti i za eOsobnu: grana u ADR-u 0002 (dokaz na telefonu, drugi potpisani odgovor,
       ili drugi izdavatelj) prije F4
+- [ ] 1.8 👤 Odluka o pozadini: samostalni Cloudflare Worker koji svatko može deployati (OIDC razmjena,
+      relayer, OPRF u Durable Objectima) ili domovina-api kao stadion V1. Preporuka: Worker, ADR 0006;
+      tada F07 postaje `worker/` u ovom repou. Uz to jedna proba razmjene tokena s Workera (prihvaća li
+      Certilia Cloudflareove IP-ove). Svaki operater treba vlastiti Certilia klijent od AKD-a.
+- [ ] 1.9 👤 Firefox + PKCS#11, pa proba nudi li Certilia osobnu iskaznicu ([02](docs/istrazivanja/02-eoi-prijava-macos.md))
 
-Gotovo kad: tablica tokena popunjena, tri ADR-a prihvaćena, E-02 na produkciji stadiona.
+Gotovo kad: tablica tokena popunjena, ADR-ovi 0002–0004 (i 0006) prihvaćeni, E-02 na produkciji stadiona.
 
 ## ⬜ F02 Jezgra ugovora
 
