@@ -1,0 +1,13 @@
+{
+  "name": "otvoreno-glasovanje",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "check": "node scripts/check-docs.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
