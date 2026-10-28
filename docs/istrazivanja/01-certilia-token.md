@@ -64,6 +64,13 @@ duljine.
       upućuju na WSO2 Identity Server, gdje korake prijave postavlja AKD po klijentu. Discovery ne
       objavljuje `acr_values_supported`. Pitanje za AKD: može li se za klijent glasanja uključiti
       prijava osobnom iskaznicom i koji `acr`/`amr` tada dolazi.
+- [ ] Prijava karticom na macOS-u radi samo u **Firefoxu** s PKCS#11 modulom iz Certilia Middlewarea
+      (`/Applications/CertiliaMiddleware.app/Contents/pkcs11/libCertiliaPkcs11.dylib`). Safari, Chrome i
+      Brave karticu mogu koristiti samo za potpisivanje, ne za prijavu, jer macOS nema CryptoTokenKit
+      upravljački program za karticu ([upute za macOS 1.2](https://www.certilia.com/uploads/Certilia_Middleware_Upute_za_Mac_OS_instalaciju_1_2_8bf7accc6e.pdf),
+      [upute za Firefox 1.3](https://www.certilia.com/uploads/Certilia_Middleware_Upute_za_Firefox_HR_1_3_fe6aef6974.pdf)).
+      Za glasanje: glasač s eOI na Macu mora koristiti Firefox; sučelje to treba reći prije prijave.
+      Kontakt AKD-a za integratore: `helpdesk@certilia.com`.
 - [ ] Proxy traži `pin` kroz parametar `claims` (`certiliaService.js:97`), ali `pin` ne dolazi u
       token; OIB stiže kao `sub`.
 - [ ] JWKS: broj ključeva, eksponent, `kid`; ponoviti za tjedan dana
