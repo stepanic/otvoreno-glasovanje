@@ -59,6 +59,12 @@ duljine.
 
 ## Otvoreno
 
-- [ ] eOsobna istom skriptom (uzorak `birthdate`, `acr`, `country`)
+- [ ] eOsobna: **nije ponuđena našem klijentu.** Certilijin zaslon za prijavu nudi samo mobile.ID
+      (28. 10. 2026.). Imena autentikatora u `amr` (`BasicAuthenticator`, `MobileIdCustomAuthenticator`)
+      upućuju na WSO2 Identity Server, gdje korake prijave postavlja AKD po klijentu. Discovery ne
+      objavljuje `acr_values_supported`. Pitanje za AKD: može li se za klijent glasanja uključiti
+      prijava osobnom iskaznicom i koji `acr`/`amr` tada dolazi.
+- [ ] Proxy traži `pin` kroz parametar `claims` (`certiliaService.js:97`), ali `pin` ne dolazi u
+      token; OIB stiže kao `sub`.
 - [ ] JWKS: broj ključeva, eksponent, `kid`; ponoviti za tjedan dana
 - [ ] AKD: značenje `country`, javni PKCE klijent, najmanji scope

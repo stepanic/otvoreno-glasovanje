@@ -28,7 +28,7 @@ Predaja: [`docs/handoff/F01-preduvjeti.md`](docs/handoff/F01-preduvjeti.md). Bez
 ZK krug nad Certilia tokenom uopće izvediv u pregledniku.
 
 - [ ] 1.1 👤 Mjerenje tokena (P0.1, E-01, E-11): mobile.ID ✅ 28. 10. (1086 B, bez fotografije, vijek 1 h),
-      eOsobna čeka. Rezultat u [`docs/istrazivanja/01-certilia-token.md`](docs/istrazivanja/01-certilia-token.md).
+      eOsobna nije ponuđena našem klijentu (pitanje za AKD). Rezultat u [`docs/istrazivanja/01-certilia-token.md`](docs/istrazivanja/01-certilia-token.md).
 - [ ] 1.2 Udio popunjenog `dob` u `identity_verifications`, samo `count` (P0.2)
 - [ ] 1.3 Klijentska provjera `nonce`, `client_id`, `redirect_uri`, `state` u `authorization_url`
       prije otvaranja prozora (E-02); u repou stadiona, vrijedi već za V1, deploy po regresijskom postupku
