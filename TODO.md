@@ -27,8 +27,8 @@ flowchart LR
 Predaja: [`docs/handoff/F01-preduvjeti.md`](docs/handoff/F01-preduvjeti.md). Bez ovoga se ne zna je li
 ZK krug nad Certilia tokenom uopće izvediv u pregledniku.
 
-- [ ] 1.1 👤 Mjerenje tokena (P0.1, E-01, E-11): jedna probna prijava eOsobnom i jedna mobile.ID-om;
-      samo oblik, nikad vrijednosti. Rezultat u [`docs/istrazivanja/01-certilia-token.md`](docs/istrazivanja/README.md).
+- [ ] 1.1 👤 Mjerenje tokena (P0.1, E-01, E-11): mobile.ID ✅ 28. 10. (1086 B, bez fotografije, vijek 1 h),
+      eOsobna čeka. Rezultat u [`docs/istrazivanja/01-certilia-token.md`](docs/istrazivanja/01-certilia-token.md).
 - [ ] 1.2 Udio popunjenog `dob` u `identity_verifications`, samo `count` (P0.2)
 - [ ] 1.3 Klijentska provjera `nonce`, `client_id`, `redirect_uri`, `state` u `authorization_url`
       prije otvaranja prozora (E-02); u repou stadiona, vrijedi već za V1, deploy po regresijskom postupku
@@ -37,7 +37,7 @@ ZK krug nad Certilia tokenom uopće izvediv u pregledniku.
       po glasovanju, ZK dokaz uz OPRF upit, prozor konačnosti upisa
 - [ ] 1.6 ADR 0003 alati (solc, Hardhat ili Foundry, Semaphore v4) i ADR 0004 sučelja
       `IBallotModule`, `IGatekeeper`, `configHash` (P0.4, P2.1)
-- [ ] 1.7 Ako token nosi fotografiju: grana u ADR-u 0002 (dokaz na telefonu, drugi potpisani odgovor,
+- [x] 1.7 ~~Ako token nosi fotografiju~~ ne nosi (mobile.ID); provjeriti i za eOsobnu: grana u ADR-u 0002 (dokaz na telefonu, drugi potpisani odgovor,
       ili drugi izdavatelj) prije F4
 
 Gotovo kad: tablica tokena popunjena, tri ADR-a prihvaćena, E-02 na produkciji stadiona.

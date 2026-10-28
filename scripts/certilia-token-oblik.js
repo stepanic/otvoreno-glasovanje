@@ -9,8 +9,11 @@
 (() => {
   const JAVNO = new Set([
     "alg", "typ", "kid", "iss", "aud", "acr", "amr",
-    "documentType", "documentIssuingCountry",
+    "documentType", "documentIssuingCountry", "country",
   ]);
+  // Za ova polja ispisuje se i uzorak formata (znamenka → 9, slovo → a), bez vrijednosti.
+  const FORMAT = new Set(["birthdate"]);
+  const uzorak = (v) => v.replace(/[0-9]/g, "9").replace(/\p{L}/gu, "a");
 
   const b64urlToBytes = (s) => {
     const b = atob(s.replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(s.length / 4) * 4, "="));
@@ -21,7 +24,8 @@
 
   const opis = (k, v) => {
     if (JAVNO.has(k)) return { kljuc: k, tip: typeof v, vrijednost: v };
-    if (typeof v === "string") return { kljuc: k, tip: "string", duljina: v.length, abeceda: abeceda(v) };
+    if (typeof v === "string")
+      return { kljuc: k, tip: "string", duljina: v.length, abeceda: abeceda(v), ...(FORMAT.has(k) && { uzorak: uzorak(v) }) };
     if (typeof v === "number") return { kljuc: k, tip: "number" };
     if (Array.isArray(v)) return { kljuc: k, tip: "array", duljina: v.length };
     if (v && typeof v === "object") return { kljuc: k, tip: "object", kljucevi: Object.keys(v) };
@@ -35,6 +39,7 @@
     const payload = JSON.parse(payloadJson);
     const rezultat = {
       izmjereno: new Date().toISOString().slice(0, 10),
+      nacin: (payload.amr ?? []).join(", "),
       duljina_tokena_znakova: token.length,
       duljina_header_payload_bajtova: h.length + 1 + p.length,
       sha256_blokova_64B: Math.ceil((h.length + 1 + p.length + 9) / 64),
